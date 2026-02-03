@@ -1,19 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/btnFanToggle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Toggle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false">
+
+            <Button
+                android:id="@+id/btnPower"
+                android:layout_width="0dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp"
+                android:text="Power On/Off" />
+
+            <Button
+                android:id="@+id/btnSleep"
+                android:layout_width="0dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginBottom="32dp"
+                android:padding="16dp"
+                android:text="Sleep Mode" />
+
+            <Button
+                android:id="@+id/btnBrightUp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Bright +" />
+
+            <Button
+                android:id="@+id/btnBrightDown"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Bright -" />
+
+            <Button
+                android:id="@+id/btnBalanceUp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:layout_marginTop="12dp"
+                android:text="Balance +" />
+
+            <Button
+                android:id="@+id/btnBalanceDown"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:layout_marginTop="12dp"
+                android:text="Balance -" />
+
+            <Button
+                android:id="@+id/btnBalanceMode"
+                android:layout_width="0dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="24dp"
+                android:padding="16dp"
+                android:text="Switch Balance Mode" />
+
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>
