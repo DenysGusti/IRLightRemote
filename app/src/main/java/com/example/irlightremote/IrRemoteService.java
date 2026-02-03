@@ -2,12 +2,7 @@ package com.example.irlightremote;
 
 import android.hardware.ConsumerIrManager;
 
-/**
- * Service to handle NEC IR Protocol transmission.
- */
 public record IrRemoteService(ConsumerIrManager irManager) {
-    private static final long ADDRESS1 = 0xA0;
-    private static final long ADDRESS2 = 0xB7;
     private static final int FREQUENCY_HZ = 38000;
     private static final int HDR_MARK_MS = 9000;
     private static final int HDR_SPACE_MS = 4500;
@@ -18,17 +13,17 @@ public record IrRemoteService(ConsumerIrManager irManager) {
     public IrRemoteService {
         if (irManager == null)
             throw new IllegalArgumentException("irManager cannot be null");
-
     }
 
-    public void sendNecCode(long command) {
-        long inverseCommand = command ^ 0xFF;
+    public void sendNecCode(int address, long command) {
+        long address0 = address & 0xFF;
+        long address1 = (address >> 8) & 0xFF;
+        long invCommand = command ^ 0xFF;
 
-        long frame = ADDRESS1 | ADDRESS2 << 8 | command << 16 | inverseCommand << 24;
+        long frame = address1 | address0 << 8 | command << 16 | invCommand << 24;
 
-        var pattern = new int[2 + (32 * 2) + 1];
+        var pattern = new int[67];
         int i = 0;
-
         pattern[i++] = HDR_MARK_MS;
         pattern[i++] = HDR_SPACE_MS;
 

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">IRLightRemote</string>
+    <string name="active_profile">ACTIVE: %1$s</string>
+    <string name="power">Power On/Off</string>
+    <string name="sleep_mode">Sleep Mode</string>
+    <string name="brightness_up">Brightness +</string>
+    <string name="brightness_down">Brightness -</string>
+    <string name="balance_up">Balance +</string>
+    <string name="balance_down">Balance -</string>
+    <string name="balance_mode">Switch Balance Mode</string>
+    <string name="memory">Memory</string>
+    <string name="timer">0.5h</string>
+    <string name="profile">A/B</string>
 </resources>

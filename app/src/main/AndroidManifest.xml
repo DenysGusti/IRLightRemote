@@ -7,7 +7,7 @@
         android:required="true" />
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="IR Fan Remote"
+        android:label="IR Light Remote"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
             android:name=".MainActivity"

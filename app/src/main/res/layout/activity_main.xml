@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#121212"
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,6 +15,16 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="64dp" />
+
+        <TextView
+            android:id="@+id/txtProfileStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/active_profile"
+            android:textColor="#BB86FC"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -29,31 +39,32 @@
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill_horizontal"
                 android:layout_marginBottom="12dp"
+                android:backgroundTint="#B00020"
                 android:padding="16dp"
-                android:text="Power On/Off" />
+                android:text="@string/power" />
 
             <Button
                 android:id="@+id/btnSleep"
                 android:layout_width="0dp"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill_horizontal"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="24dp"
                 android:padding="16dp"
-                android:text="Sleep Mode" />
+                android:text="@string/sleep_mode" />
 
             <Button
                 android:id="@+id/btnBrightUp"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="4dp"
-                android:text="Bright +" />
+                android:text="@string/brightness_up" />
 
             <Button
                 android:id="@+id/btnBrightDown"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="4dp"
-                android:text="Bright -" />
+                android:text="@string/brightness_down" />
 
             <Button
                 android:id="@+id/btnBalanceUp"
@@ -61,7 +72,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="4dp"
                 android:layout_marginTop="12dp"
-                android:text="Balance +" />
+                android:text="@string/balance_up" />
 
             <Button
                 android:id="@+id/btnBalanceDown"
@@ -69,18 +80,42 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="4dp"
                 android:layout_marginTop="12dp"
-                android:text="Balance -" />
+                android:text="@string/balance_down" />
 
             <Button
                 android:id="@+id/btnBalanceMode"
                 android:layout_width="0dp"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill_horizontal"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/balance_mode" />
+
+            <Button
+                android:id="@+id/btnMemory"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/memory" />
+
+            <Button
+                android:id="@+id/btnTimer"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/timer" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="0dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#3700B3"
                 android:padding="16dp"
-                android:text="Switch Balance Mode" />
+                android:text="@string/profile" />
 
         </GridLayout>
-
     </LinearLayout>
 </ScrollView>
