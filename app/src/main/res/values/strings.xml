@@ -5,8 +5,8 @@
     <string name="sleep_mode">Sleep Mode</string>
     <string name="brightness_up">Brightness +</string>
     <string name="brightness_down">Brightness -</string>
-    <string name="balance_up">Balance +</string>
-    <string name="balance_down">Balance -</string>
+    <string name="balance_up">K+</string>
+    <string name="balance_down">K-</string>
     <string name="balance_mode">Switch Balance Mode</string>
     <string name="memory">Memory</string>
     <string name="timer">0.5h</string>

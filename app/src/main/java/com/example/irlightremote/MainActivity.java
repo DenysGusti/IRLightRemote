@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     private IrRemoteService irService;
     private TextView txtProfileStatus;
@@ -36,15 +38,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
 
         txtProfileStatus = findViewById(R.id.txtProfileStatus);
         updateProfileLabel();
 
         var irManager = (ConsumerIrManager) getSystemService(Context.CONSUMER_IR_SERVICE);
-        if (!irManager.hasIrEmitter())
+        if (!irManager.hasIrEmitter()) {
             Toast.makeText(this, "IR Blaster not found!", Toast.LENGTH_LONG).show();
-
+        }
         irService = new IrRemoteService(irManager);
 
         setupButton(R.id.btnPower, 0xE9);
