@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -37,7 +36,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/background_circle_button"
             android:contentDescription="@string/power"
             android:padding="16dp"
@@ -50,7 +49,7 @@
             android:id="@+id/btnSleep"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/background_circle_button"
             android:contentDescription="@string/sleep_mode"
             android:padding="16dp"
@@ -63,7 +62,7 @@
             android:id="@+id/btnMemory"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/background_circle_button"
             android:contentDescription="@string/memory"
             android:padding="16dp"
@@ -149,29 +148,28 @@
             android:id="@+id/btnTimer"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/background_circle_button"
             android:text="@string/timer"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline_center"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnBalanceMode" />
 
         <Button
             android:id="@+id/btnProfile"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/background_circle_button"
             android:text="@string/profile"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/guideline_center"
-            app:layout_constraintTop_toTopOf="@+id/btnTimer" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBalanceMode" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
