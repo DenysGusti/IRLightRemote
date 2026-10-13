@@ -1,7 +1,7 @@
 # IR Light Remote
 
-An Android-based Infrared (IR) remote application specifically designed for the Mondo Ceiling LED
-Lamp. This project was created because no existing universal remote database or app supported the
+An Android-based Infrared (IR) remote application specifically designed for the Mondo Stairs Ceiling LED
+Lamp (Deckenleuchte MONDO STAIRS). This project was created because no existing universal remote database or app supported the
 specific NEC-style codes required for this hardware.
 
 | Function        | Command (Hex) | Full Code (Profile A) | Full Code (Profile B) |
