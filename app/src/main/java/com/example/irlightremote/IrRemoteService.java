@@ -11,8 +11,9 @@ public record IrRemoteService(ConsumerIrManager irManager) {
     private static final int BIT_ONE_MS = 1690;
 
     public IrRemoteService {
-        if (irManager == null)
+        if (irManager == null) {
             throw new IllegalArgumentException("irManager cannot be null");
+        }
     }
 
     public void sendNecCode(int address, long command) {
