@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         var irManager = (ConsumerIrManager) getSystemService(Context.CONSUMER_IR_SERVICE);
         if (irManager == null || !irManager.hasIrEmitter()) {
-            Toast.makeText(this, "IR Blaster not found or not supported!", Toast.LENGTH_LONG).show();
+            showNoIrToast();
         } else {
             irService = new IrRemoteService(irManager);
         }
@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             updateProfileLabel();
             if (irService != null) {
                 irService.sendNecCode(currentProfile.getAddress(), 0xA8);
+            } else {
+                showNoIrToast();
             }
         });
     }
@@ -73,8 +75,14 @@ public class MainActivity extends AppCompatActivity {
         findViewById(viewId).setOnClickListener(v -> {
             if (irService != null) {
                 irService.sendNecCode(currentProfile.getAddress(), command);
+            } else {
+                showNoIrToast();
             }
         });
+    }
+
+    private void showNoIrToast() {
+        Toast.makeText(this, R.string.no_ir_blaster, Toast.LENGTH_SHORT).show();
     }
 
     private void updateProfileLabel() {

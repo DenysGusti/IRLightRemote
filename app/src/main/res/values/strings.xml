@@ -11,4 +11,5 @@
     <string name="memory">Memory</string>
     <string name="timer">0.5h</string>
     <string name="profile">A/B</string>
+    <string name="no_ir_blaster">IR Blaster not found or not supported!</string>
 </resources>
