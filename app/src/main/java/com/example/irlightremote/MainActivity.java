@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtProfileStatus;
 
     private enum Profile {
-        A(0xA0B7),
-        B(0xAD09);
+        A(0xA0B7), B(0xAD09);
 
         private final int address;
 
@@ -45,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
         updateProfileLabel();
 
         var irManager = (ConsumerIrManager) getSystemService(Context.CONSUMER_IR_SERVICE);
-        if (!irManager.hasIrEmitter()) {
-            Toast.makeText(this, "IR Blaster not found!", Toast.LENGTH_LONG).show();
+        if (irManager == null || !irManager.hasIrEmitter()) {
+            Toast.makeText(this, "IR Blaster not found or not supported!", Toast.LENGTH_LONG).show();
+        } else {
+            irService = new IrRemoteService(irManager);
         }
-        irService = new IrRemoteService(irManager);
 
         setupButton(R.id.btnPower, 0xE9);
         setupButton(R.id.btnSleep, 0xF5);
@@ -63,14 +63,18 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnProfile).setOnClickListener(v -> {
             currentProfile = currentProfile.next();
             updateProfileLabel();
-            irService.sendNecCode(currentProfile.getAddress(), 0xA8);
+            if (irService != null) {
+                irService.sendNecCode(currentProfile.getAddress(), 0xA8);
+            }
         });
     }
 
     private void setupButton(int viewId, int command) {
-        findViewById(viewId).setOnClickListener(v ->
-                irService.sendNecCode(currentProfile.getAddress(), command)
-        );
+        findViewById(viewId).setOnClickListener(v -> {
+            if (irService != null) {
+                irService.sendNecCode(currentProfile.getAddress(), command);
+            }
+        });
     }
 
     private void updateProfileLabel() {
